@@ -29,3 +29,14 @@ SELECT COUNT(*) AS Total_Orders,
        SUM(CAST(field14 AS REAL)) AS Total_Sales 
 FROM orders 
 WHERE field14 != 'TotalPrice';
+
+
+### 2. Revenue Performance Matrix by Product Category 
+Objective: Identify distribution metrics and total gross numbers generated across unique operational product segments (field4).
+
+SQL
+SELECT field4 AS Product, SUM(CAST(field14 AS REAL)) AS Total_Revenue
+FROM orders 
+WHERE field4 != 'Product'
+GROUP BY field4
+ORDER BY Total_Revenue DESC;
