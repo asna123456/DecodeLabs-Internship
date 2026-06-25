@@ -42,8 +42,8 @@ The objective was to query a relational database containing **1,201 transaction 
     ORDER BY Total_Revenue DESC;
 
 ### 3. Customer Purchasing Behavior by Payment Method
-  - **Highest Cart Size:** Customers using Cash buy the most items per transaction, averaging 5.72 items per cart[cite: 1].
-  - **Lowest Cart Size:** Online transactions recorded the lowest average cart size with 5.23 items[cite: 1].
+  - **Highest Cart Size:** Customers using Cash buy the most items per transaction, averaging 5.72 items per cart.
+  - **Lowest Cart Size:** Online transactions recorded the lowest average cart size with 5.23 items.
   - **SQL Query Used:**
       ```sql
       SELECT field8 AS Payment_Method, AVG(CAST(field11 AS REAL)) AS Avg_Items
