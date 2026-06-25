@@ -24,19 +24,34 @@ The objective was to query a relational database containing **1,201 transaction 
 - **Total Orders Processed:** 1,201 orders
 - **Grand Total Revenue:** 1,264,761.96
 - **SQL Query Used:**
-```sql
-SELECT COUNT(*) AS Total_Orders, 
+   ```sql
+   SELECT COUNT(*) AS Total_Orders, 
        SUM(CAST(field14 AS REAL)) AS Total_Sales 
-FROM orders 
-WHERE field14 != 'TotalPrice';
+       FROM orders 
+    WHERE field14 != 'TotalPrice'; 
+
+### 2. Revenue Breakdown by Product Category
+ -  **Top Performing Product:** Chair generated the highest total revenue of 195,620.11.
+ -  **Close Competitor:** Printer came second with a total revenue of 195,612.61.
+ -  **SQL Query Used:**
+    ```sql
+    SELECT field4 AS Product, SUM(CAST(field14 AS REAL)) AS Total_Revenue
+           FROM orders 
+           WHERE field4 != 'Product'
+           GROUP BY field4
+    ORDER BY Total_Revenue DESC;
+
+### 3. Customer Purchasing Behavior by Payment Method
+  - **Highest Cart Size:** Customers using Cash buy the most items per transaction, averaging 5.72 items per cart[cite: 1].
+  - **Lowest Cart Size:** Online transactions recorded the lowest average cart size with 5.23 items[cite: 1].
+  - **SQL Query Used:**
+      ```sql
+      SELECT field8 AS Payment_Method, AVG(CAST(field11 AS REAL)) AS Avg_Items
+         FROM orders 
+         WHERE field8 != 'PaymentMethod'
+      GROUP BY field8;
 
 
-### 2. Revenue Performance Matrix by Product Category 
-Objective: Identify distribution metrics and total gross numbers generated across unique operational product segments (field4).
 
-SQL
-SELECT field4 AS Product, SUM(CAST(field14 AS REAL)) AS Total_Revenue
-FROM orders 
-WHERE field4 != 'Product'
-GROUP BY field4
-ORDER BY Total_Revenue DESC;
+
+
