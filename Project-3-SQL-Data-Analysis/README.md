@@ -2,7 +2,7 @@
 
 This folder contains my queries, database files, and learning outcomes for Milestone 3 (SQL Data Analysis) of the DecodeLabs Industrial Training Program.
 
-## 📌 Project Overview
+##  Project Overview
 The objective was to query a relational database containing **1,201 transaction records** using SQLite to discover trends across product categories, revenues, and customer purchasing habits.
 
 ### Key Skills Demonstrated:
@@ -12,13 +12,13 @@ The objective was to query a relational database containing **1,201 transaction 
 
 ---
 
-## 🛠️ Tech Stack Used
+##  Tech Stack Used
 - **Database Engine:** SQLite (DB Browser for SQLite)
 - **Source Format:** CSV UTF-8 (Converted from raw Excel dataset)
 
 ---
 
-## 📈 Key Insights Discovered
+##  Key Insights Discovered
 
 ### 1. Grand Total Volume & Sales Revenue
 - **Total Orders Processed:** 1,201 orders
